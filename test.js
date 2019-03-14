@@ -17,7 +17,8 @@ function isSolved(initial, sudoku) {
   }
   return initial.every((row, rowIndex) => {
     return row.every((num, colIndex) => {
-      return num === 0 || sudoku[rowIndex][colIndex] === num;
+      let cell = sudoku[rowIndex][colIndex]
+      return Number.isInteger(cell) && (num === 0 || cell === num);
     });
   });
 }
